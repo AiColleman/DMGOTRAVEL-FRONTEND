@@ -11,7 +11,10 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "prepare:images": "node scripts/prepare-images.mjs",
+    "predev": "bun run prepare:images",
+    "prebuild": "bun run prepare:images"
   },
   "overrides": {
     "rolldown": "1.2.1"

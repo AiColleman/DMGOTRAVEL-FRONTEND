@@ -16,7 +16,7 @@ export function PublicFooter() {
         <div className="space-y-5">
           <Logo inverted />
           <p className="max-w-xs text-sm text-ink-foreground/75">
-            Experiencias por el Perú diseñadas con operadores locales, reservas claras y acompañamiento humano.
+            Experiencias inspiradas en Ayacucho, con rutas claras, alojamiento opcional y una experiencia digital pensada para viajar con tranquilidad.
           </p>
           <ul className="flex gap-2" aria-label="Redes sociales (demostrativas)">
             {socials.map(({ label, Icon }) => (
@@ -40,9 +40,9 @@ export function PublicFooter() {
           </ul>
         </nav>
         <div>
-          <h2 className="eyebrow mb-4 text-amber">Contacto demo</h2>
+          <h2 className="eyebrow mb-4 text-amber">Ayacucho · demo</h2>
           <ul className="space-y-3 text-sm text-ink-foreground/80">
-            <li className="flex gap-2"><MapPin className="mt-0.5 size-4 shrink-0" /> Huamanga, Ayacucho — dirección referencial</li>
+            <li className="flex gap-2"><MapPin className="mt-0.5 size-4 shrink-0" /> Huamanga, Ayacucho · ubicación referencial</li>
             <li className="flex gap-2"><Phone className="mt-0.5 size-4 shrink-0" /> +51 900 000 000 (ficticio)</li>
             <li className="flex gap-2"><Mail className="mt-0.5 size-4 shrink-0" /> hola@example.com</li>
           </ul>

@@ -21,8 +21,8 @@ function BookingSummary({ tour }: { tour: Tour }) {
   const free = dep ? dep.capacity - dep.booked : 0;
 
   const reserve = () => {
-    if (!dep) return toast.error("Selecciona una fecha de salida.");
-    if (travelers > free) return toast.error("No hay cupos suficientes para esa salida.");
+    if (!dep) { toast.error("Selecciona una fecha de salida."); return; }
+    if (travelers > free) { toast.error("No hay cupos suficientes para esa salida."); return; }
     toast.info("El flujo de reserva se habilita en la siguiente etapa de esta demo.", { description: `${tour.name} · ${dateLabel(dep.date)} · ${travelers} viajeros` });
   };
 

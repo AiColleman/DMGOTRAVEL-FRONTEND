@@ -61,8 +61,8 @@ export function ToursPage() {
       <Breadcrumbs items={[{ label: "Inicio", to: "/" }, { label: "Tours" }]} />
       <header className="mt-6 max-w-2xl space-y-3">
         <p className="eyebrow">Catálogo</p>
-        <h1 className="font-display text-5xl leading-none md:text-6xl">Experiencias por el Perú</h1>
-        <p className="text-muted-foreground">Tours y paquetes con operadores locales. Precios demostrativos: el total final lo valida el servidor.</p>
+        <h1 className="font-display text-5xl leading-none md:text-6xl">Experiencias en Ayacucho</h1>
+        <p className="text-muted-foreground">Rutas y experiencias demo inspiradas en la región de Ayacucho. El total final siempre lo valida el servidor.</p>
       </header>
 
       <div className="mt-10 grid gap-10 lg:grid-cols-[260px_1fr]">

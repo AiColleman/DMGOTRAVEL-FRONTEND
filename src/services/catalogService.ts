@@ -23,12 +23,12 @@ export const themeOf = (tour: Tour): TourTheme => themeByCategory[tour.category]
 
 export type TourSort = "recomendado" | "precio-asc" | "precio-desc";
 export interface TourFilters {
-  destino?: Destination;
-  categoria?: TourTheme;
-  max?: number;
-  duracion?: "1" | "2-3" | "4+";
-  orden?: TourSort;
-  q?: string;
+  destino?: Destination | undefined;
+  categoria?: TourTheme | undefined;
+  max?: number | undefined;
+  duracion?: "1" | "2-3" | "4+" | undefined;
+  orden?: TourSort | undefined;
+  q?: string | undefined;
 }
 
 const matchDuration = (days: number, d?: TourFilters["duracion"]) =>

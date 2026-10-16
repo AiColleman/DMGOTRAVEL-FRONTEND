@@ -3,7 +3,7 @@ import { useId, useState, type InputHTMLAttributes } from "react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 
-type FieldProps = InputHTMLAttributes<HTMLInputElement> & { label: string; error?: string };
+type FieldProps = InputHTMLAttributes<HTMLInputElement> & { label: string; error?: string | undefined };
 
 export function TextField({ label, error, ...props }: FieldProps) {
   const id = useId();
@@ -64,5 +64,5 @@ export function passwordStrength(p: string): { score: number; label: string } {
   if (/[A-Z]/.test(p) && /[a-z]/.test(p)) s++;
   if (/\d/.test(p)) s++;
   if (/[^A-Za-z0-9]/.test(p) || p.length >= 12) s++;
-  return { score: s, label: ["Muy débil", "Débil", "Aceptable", "Buena", "Fuerte"][s] };
+  return { score: s, label: ["Muy débil", "Débil", "Aceptable", "Buena", "Fuerte"][s] ?? "Muy débil" };
 }

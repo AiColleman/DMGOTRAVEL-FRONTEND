@@ -14,8 +14,8 @@ export function FeaturedTours() {
   const q = useQuery({ queryKey: ["tours", {}], queryFn: () => catalogService.listTours() });
   return (
     <section className="container-page py-20">
-      <SectionHeading eyebrow="Experiencias destacadas" title="Elegidas para viajar con calma" action={<Button asChild variant="outline" className="h-11"><Link to="/tours">Ver todo el catálogo</Link></Button>}>
-        Itinerarios pensados con operadores locales. Precios referenciales de demostración.
+      <SectionHeading eyebrow="Experiencias destacadas" title="Ayacucho para descubrir con calma" action={<Button asChild variant="outline" className="h-11"><Link to="/tours">Ver todo el catálogo</Link></Button>}>
+        Rutas demo inspiradas en patrimonio, naturaleza y cultura de la región. Precios referenciales.
       </SectionHeading>
       <div className="mt-10">
         {q.isPending && <LoadingState />}
@@ -31,8 +31,8 @@ export function Destinations() {
     <section className="bg-ink py-20 text-ink-foreground">
       <div className="container-page">
         <p className="eyebrow text-amber">Destinos curados</p>
-        <h2 className="mt-3 max-w-2xl font-display text-4xl md:text-5xl">Cinco territorios, una misma forma de recibirte</h2>
-        <ul className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-5">
+        <h2 className="mt-3 max-w-2xl font-display text-4xl md:text-5xl">Seis lugares, una región por descubrir</h2>
+        <ul className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-6">
           {DESTINATIONS.map((d, i) => (
             <li key={d} className={i === 0 ? "col-span-2 md:col-span-1" : ""}>
               <Link to="/tours" search={{ destino: d }} className="group relative block aspect-[3/4] overflow-hidden rounded-md">
@@ -111,8 +111,8 @@ export function FinalCta() {
     <section className="container-page pb-20">
       <div className="flex flex-col items-start gap-6 rounded-lg bg-primary p-10 text-primary-foreground md:flex-row md:items-center md:justify-between md:p-14">
         <div className="max-w-xl space-y-3">
-          <h2 className="font-display text-4xl md:text-5xl">¿Listo para tu próximo viaje por el Perú?</h2>
-          <p className="text-primary-foreground/80">Elige una experiencia, fecha y viajeros. El hotel lo decides tú.</p>
+          <h2 className="font-display text-4xl md:text-5xl">¿Listo para descubrir Ayacucho?</h2>
+          <p className="text-primary-foreground/80">Elige una ruta, fecha y viajeros. El alojamiento sigue siendo opcional.</p>
         </div>
         <Button asChild size="lg" variant="secondary" className="h-12 px-8"><Link to="/tours">Explorar experiencias</Link></Button>
       </div>

@@ -4,14 +4,14 @@
  *
  * Visual and catalog focus: Ayacucho region, Peru.
  */
-import ayacucho from "@/assets/ayacucho.svg";
-import andes from "@/assets/hero-ayacucho.svg";
-import millpu from "@/assets/millpu.svg";
-import hotelImg from "@/assets/hotel-ayacucho.svg";
-import quinua from "@/assets/quinua.svg";
-import wari from "@/assets/wari.svg";
-import vilcashuaman from "@/assets/vilcashuaman.svg";
-import huanta from "@/assets/huanta.svg";
+const ayacucho = "/images/ayacucho/huamanga.jpg";
+const andes = "/images/ayacucho/hero-huamanga.jpg";
+const millpu = "/images/ayacucho/millpu.jpg";
+const hotelImg = "/images/ayacucho/casona.jpg";
+const quinua = "/images/ayacucho/quinua.jpg";
+const wari = "/images/ayacucho/wari.jpg";
+const vilcashuaman = "/images/ayacucho/vilcashuaman.jpg";
+const huanta = "/images/ayacucho/huanta.jpg";
 import type { AuditLog, Hotel, Payment, Reservation, RoomInventory, RoomType, Tour, TourDeparture, User } from "@/types";
 
 export const images = { ayacucho, andes, millpu, hotel: hotelImg, quinua, wari, vilcashuaman, huanta };

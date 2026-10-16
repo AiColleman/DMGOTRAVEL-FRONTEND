@@ -7,8 +7,8 @@ import { db, delay } from "@/mocks/db";
 import type { Destination, Hotel, RoomInventory, RoomType } from "@/types";
 
 export interface HotelFilters {
-  destino?: Destination;
-  max?: number;
+  destino?: Destination | undefined;
+  max?: number | undefined;
 }
 
 export interface HotelWithRooms extends Hotel {

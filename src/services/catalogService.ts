@@ -9,14 +9,14 @@ import type { Destination, Tour, TourDeparture } from "@/types";
 
 export type TourTheme = "Aventura" | "Cultural" | "Naturaleza" | "Gastronomía";
 export const TOUR_THEMES: TourTheme[] = ["Aventura", "Cultural", "Naturaleza", "Gastronomía"];
-export const DESTINATIONS: Destination[] = ["Ayacucho", "Cusco", "Arequipa", "Lima", "Millpu"];
+export const DESTINATIONS: Destination[] = ["Ayacucho", "Millpu", "Quinua", "Wari", "Vilcashuamán", "Huanta"];
 
 const themeByCategory: Record<string, TourTheme> = {
   "Cultura y tradición": "Cultural",
   Naturaleza: "Naturaleza",
-  "Historia inca": "Cultural",
-  "Paisaje y gastronomía": "Aventura",
-  Gastronomía: "Gastronomía",
+  "Historia y memoria": "Cultural",
+  "Patrimonio arqueológico": "Cultural",
+  "Valle y gastronomía": "Gastronomía",
   Arqueología: "Aventura",
 };
 export const themeOf = (tour: Tour): TourTheme => themeByCategory[tour.category] ?? "Cultural";

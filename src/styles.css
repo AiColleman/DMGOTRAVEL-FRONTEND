@@ -1,0 +1,168 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * DMGOTRAVEL design system.
+ * Palette: deep petroleum blue, teal/emerald, cream/sand, subtle amber, warm greys.
+ * All components consume these semantic tokens — never hardcode colors.
+ */
+@theme inline {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--foreground);
+  --color-popover: var(--card);
+  --color-popover-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--primary-foreground);
+  --color-border: var(--border);
+  --color-input: var(--border);
+  --color-ring: var(--ring);
+  --color-sand: var(--sand);
+  --color-amber: var(--amber);
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
+
+  --color-sidebar: var(--ink);
+  --color-sidebar-foreground: var(--ink-foreground);
+  --color-sidebar-primary: var(--accent);
+  --color-sidebar-primary-foreground: var(--ink);
+  --color-sidebar-accent: var(--ink-soft);
+  --color-sidebar-accent-foreground: var(--ink-foreground);
+  --color-sidebar-border: var(--ink-soft);
+  --color-sidebar-ring: var(--accent);
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-xl: 14px;
+
+  --shadow-soft: 0 1px 2px oklch(0.25 0.03 230 / 0.05), 0 8px 24px oklch(0.25 0.03 230 / 0.06);
+  --shadow-lift: 0 2px 4px oklch(0.25 0.03 230 / 0.06), 0 20px 48px oklch(0.25 0.03 230 / 0.12);
+}
+
+:root {
+  --background: oklch(0.975 0.01 85);
+  --card: oklch(0.995 0.004 85);
+  --foreground: oklch(0.24 0.025 235);
+  --muted: oklch(0.945 0.014 82);
+  --muted-foreground: oklch(0.48 0.02 240);
+  --border: oklch(0.89 0.016 82);
+  --sand: oklch(0.92 0.03 80);
+
+  --primary: oklch(0.36 0.06 228);
+  --primary-foreground: oklch(0.99 0.005 85);
+  --secondary: oklch(0.93 0.025 185);
+  --secondary-foreground: oklch(0.3 0.05 200);
+  --accent: oklch(0.56 0.095 175);
+  --accent-foreground: oklch(0.99 0.005 85);
+  --amber: oklch(0.72 0.12 70);
+  --ring: oklch(0.56 0.095 175);
+
+  --ink: oklch(0.24 0.04 232);
+  --ink-soft: oklch(0.31 0.045 230);
+  --ink-foreground: oklch(0.95 0.012 85);
+
+  --success: oklch(0.5 0.1 160);
+  --warning: oklch(0.58 0.12 65);
+  --destructive: oklch(0.53 0.17 27);
+  --info: oklch(0.5 0.08 235);
+}
+
+* {
+  border-color: var(--border);
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+}
+img {
+  object-fit: cover;
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+@utility container-page {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  @media (min-width: 768px) {
+    padding-inline: 2.5rem;
+  }
+}
+@utility eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+@utility surface {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+@utility hero-shade {
+  background: linear-gradient(100deg, oklch(0.2 0.04 232 / 0.82) 0%, oklch(0.2 0.04 232 / 0.35) 55%, oklch(0.2 0.04 232 / 0.1) 100%);
+}
+@utility field-input {
+  width: 100%;
+  min-height: 2.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--card);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  color: var(--foreground);
+  transition: border-color 0.15s, box-shadow 0.15s;
+  &:focus {
+    outline: none;
+    border-color: var(--ring);
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--ring) 22%, transparent);
+  }
+  &[aria-invalid="true"] {
+    border-color: var(--destructive);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -18,7 +18,7 @@ export interface User {
 }
 
 export type TourKind = "package" | "service";
-export type Destination = "Ayacucho" | "Cusco" | "Arequipa" | "Lima" | "Millpu";
+export type Destination = "Ayacucho" | "Millpu" | "Quinua" | "Wari" | "Vilcashuamán" | "Huanta";
 
 export interface Tour {
   id: string;

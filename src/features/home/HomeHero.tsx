@@ -19,13 +19,13 @@ export function HomeHero() {
 
   return (
     <section className="relative isolate overflow-hidden text-ink-foreground">
-      <img src={images.andes} alt="Montañas de los Andes peruanos al amanecer" width={1920} height={1080} className="absolute inset-0 -z-10 h-full w-full" />
+      <img src={images.andes} alt="Paisaje ilustrado de Ayacucho y su arquitectura colonial al atardecer" width={1920} height={1080} className="absolute inset-0 -z-10 h-full w-full" />
       <div className="hero-shade absolute inset-0 -z-10" />
       <div className="container-page flex min-h-[88vh] flex-col justify-end gap-8 pb-14 pt-24">
         <div className="max-w-3xl space-y-5">
-          <p className="eyebrow text-amber">Agencia y operadora turística · Perú</p>
+          <p className="eyebrow text-amber">Agencia y operadora turística · Ayacucho, Perú</p>
           <h1 className="font-display text-5xl leading-[0.95] sm:text-6xl md:text-8xl">Viajes que se sienten mucho antes de partir.</h1>
-          <p className="max-w-xl text-lg text-ink-foreground/85">Ayacucho, Cusco, Arequipa, Lima y Millpu con guías locales, reservas claras y el alojamiento solo si lo quieres.</p>
+          <p className="max-w-xl text-lg text-ink-foreground/85">Huamanga, Millpu, Quinua, Wari, Vilcashuamán y Huanta con rutas locales, reservas claras y alojamiento opcional.</p>
         </div>
         <form onSubmit={submit} className="grid gap-3 rounded-lg bg-card p-3 text-foreground shadow-lift md:grid-cols-[1.3fr_1fr_0.8fr_auto]" aria-label="Buscar experiencias">
           <label className="space-y-1 px-2"><span className="text-xs font-medium text-muted-foreground">Destino</span>

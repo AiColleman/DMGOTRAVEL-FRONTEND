@@ -1,13 +1,33 @@
-# Lovable snapshot
+# DMGOTRAVEL Frontend — evolución del snapshot de Lovable
 
-- Source project: `DMG TRAVEL: Premium Peru`
+- Proyecto fuente: `DMG TRAVEL: Premium Peru`
 - Lovable project ID: `915f214c-1d3e-4833-977e-3f247759b299`
-- Source commit: `5d898e9664974d091a7bb03a3402e656d148229e`
-- Destination: `AiColleman/DMGOTRAVEL-FRONTEND`
+- Snapshot importado originalmente desde: `5d898e9664974d091a7bb03a3402e656d148229e`
+- Repositorio actual: `AiColleman/DMGOTRAVEL-FRONTEND`
 
-## Important
-The TypeScript/source files in this repository were copied from the current Lovable snapshot.
+## Estado actual
 
-The connector available in this session cannot recover Lovable binary assets losslessly, so the JPG assets and favicon are valid placeholders that preserve all imports and paths. Replace them later with the original visual assets if desired.
+El snapshot ya fue estabilizado fuera de Lovable:
 
-This snapshot intentionally preserves the current development state. Known TypeScript issues related mainly to `exactOptionalPropertyTypes` still need to be repaired before considering the frontend build-complete.
+- TypeScript corregido.
+- Build de producción validado por GitHub Actions.
+- Catálogo demo regionalizado a Ayacucho.
+- Assets visuales reemplazados por ilustraciones SVG locales.
+- Google Fonts removido: se utilizan fuentes del sistema.
+- No se cargan imágenes desde URLs externas en runtime.
+
+## Assets regionales locales
+
+```text
+src/assets/
+├── hero-ayacucho.svg
+├── ayacucho.svg
+├── millpu.svg
+├── quinua.svg
+├── wari.svg
+├── vilcashuaman.svg
+├── huanta.svg
+└── hotel-ayacucho.svg
+```
+
+Los datos y precios siguen siendo demostrativos hasta conectar la futura API ASP.NET Core mediante `VITE_API_BASE_URL`.

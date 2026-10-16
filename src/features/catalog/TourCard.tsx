@@ -4,9 +4,15 @@ import { money } from "@/lib/format";
 import { themeOf } from "@/services/catalogService";
 import type { Tour } from "@/types";
 
-export function TourCard({ tour }: { tour: Tour }) {
+export function TourCard({
+  tour,
+  search,
+}: {
+  tour: Tour;
+  search?: { fecha?: string | undefined; viajeros?: number | undefined };
+}) {
   return (
-    <article className="group relative overflow-hidden rounded-[1.45rem] border border-border/70 bg-card shadow-[0_14px_40px_rgba(26,45,48,.07)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(26,45,48,.14)]">
+    <article className="travel-card group relative overflow-hidden rounded-[1.45rem] border border-border/70 bg-card shadow-[0_14px_40px_rgba(26,45,48,.07)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(26,45,48,.14)]">
       <div className="relative aspect-[4/3] overflow-hidden bg-muted">
         <img
           src={tour.image}
@@ -23,7 +29,9 @@ export function TourCard({ tour }: { tour: Tour }) {
         </span>
 
         <span className="absolute bottom-4 right-4 rounded-2xl bg-white/94 px-4 py-2 text-right text-foreground shadow-lg backdrop-blur">
-          <span className="block text-[10px] uppercase tracking-[0.12em] text-muted-foreground">Desde</span>
+          <span className="block text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
+            Desde · por persona
+          </span>
           <span className="block text-base font-semibold">{money(tour.basePrice)}</span>
         </span>
       </div>
@@ -44,6 +52,7 @@ export function TourCard({ tour }: { tour: Tour }) {
           <Link
             to="/tours/$id"
             params={{ id: tour.id }}
+            search={search ?? {}}
             className="after:absolute after:inset-0 focus-visible:outline-none"
           >
             {tour.name}

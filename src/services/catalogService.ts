@@ -9,7 +9,14 @@ import type { Destination, Tour, TourDeparture } from "@/types";
 
 export type TourTheme = "Aventura" | "Cultural" | "Naturaleza" | "Gastronomía";
 export const TOUR_THEMES: TourTheme[] = ["Aventura", "Cultural", "Naturaleza", "Gastronomía"];
-export const DESTINATIONS: Destination[] = ["Ayacucho", "Millpu", "Quinua", "Wari", "Vilcashuamán", "Huanta"];
+export const DESTINATIONS: Destination[] = [
+  "Ayacucho",
+  "Millpu",
+  "Quinua",
+  "Wari",
+  "Vilcashuamán",
+  "Huanta",
+];
 
 const themeByCategory: Record<string, TourTheme> = {
   "Cultura y tradición": "Cultural",
@@ -29,6 +36,8 @@ export interface TourFilters {
   duracion?: "1" | "2-3" | "4+" | undefined;
   orden?: TourSort | undefined;
   q?: string | undefined;
+  fecha?: string | undefined;
+  viajeros?: number | undefined;
 }
 
 const matchDuration = (days: number, d?: TourFilters["duracion"]) =>
@@ -36,7 +45,13 @@ const matchDuration = (days: number, d?: TourFilters["duracion"]) =>
 
 export const catalogService = {
   async listTours(filters: TourFilters = {}): Promise<Tour[]> {
-    if (!USE_MOCKS) return apiClient<Tour[]>(`/catalog/tours?${new URLSearchParams(filters as Record<string, string>)}`);
+    if (!USE_MOCKS) {
+      const params = new URLSearchParams();
+      Object.entries(filters).forEach(([key, value]) => {
+        if (value !== undefined) params.set(key, String(value));
+      });
+      return apiClient<Tour[]>(`/catalog/tours?${params}`);
+    }
     await delay();
     const q = filters.q?.trim().toLowerCase();
     const list = db.tours.filter(
@@ -46,6 +61,13 @@ export const catalogService = {
         (!filters.categoria || themeOf(t) === filters.categoria) &&
         (!filters.max || t.basePrice <= filters.max) &&
         matchDuration(t.days, filters.duracion) &&
+        (!(filters.fecha || filters.viajeros) ||
+          db.departures.some(
+            (d) =>
+              d.tourId === t.id &&
+              (!filters.fecha || d.date === filters.fecha) &&
+              d.capacity - d.booked >= (filters.viajeros ?? 1),
+          )) &&
         (!q || `${t.name} ${t.destination} ${t.summary}`.toLowerCase().includes(q)),
     );
     if (filters.orden === "precio-asc") return [...list].sort((a, b) => a.basePrice - b.basePrice);
@@ -69,7 +91,10 @@ export const catalogService = {
     const all = await this.listTours();
     return all
       .filter((t) => t.id !== tour.id)
-      .sort((a, b) => Number(b.destination === tour.destination) - Number(a.destination === tour.destination))
+      .sort(
+        (a, b) =>
+          Number(b.destination === tour.destination) - Number(a.destination === tour.destination),
+      )
       .slice(0, limit);
   },
 };

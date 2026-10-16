@@ -13,8 +13,9 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "prepare:images": "node scripts/prepare-images.mjs",
-    "predev": "bun run prepare:images",
-    "prebuild": "bun run prepare:images"
+    "predev": "node scripts/check-images.mjs",
+    "prebuild": "node scripts/check-images.mjs",
+    "typecheck": "tsc --noEmit"
   },
   "overrides": {
     "rolldown": "1.2.1"

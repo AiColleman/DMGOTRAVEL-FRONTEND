@@ -3,6 +3,8 @@ name: Frontend CI
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -22,6 +24,9 @@ jobs:
 
       - name: Typecheck
         run: bunx tsc --noEmit
+
+      - name: Test search and availability
+        run: bun run test
 
       - name: Build
         run: bun run build

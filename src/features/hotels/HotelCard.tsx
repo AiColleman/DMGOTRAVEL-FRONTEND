@@ -15,7 +15,7 @@ export function Stars({ n }: { n: number }) {
 
 export function HotelCard({ hotel }: { hotel: HotelWithRooms }) {
   return (
-    <article className="group relative overflow-hidden rounded-[1.45rem] border border-border/70 bg-card shadow-[0_14px_40px_rgba(26,45,48,.07)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(26,45,48,.14)]">
+    <article className="travel-card group relative overflow-hidden rounded-[1.45rem] border border-border/70 bg-card shadow-[0_14px_40px_rgba(26,45,48,.07)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(26,45,48,.14)]">
       <div className="relative aspect-[16/10] overflow-hidden bg-muted">
         <img
           src={hotel.image}
@@ -63,7 +63,9 @@ export function HotelCard({ hotel }: { hotel: HotelWithRooms }) {
 
         <div className="mt-5 flex items-end justify-between border-t pt-4">
           <div>
-            <p className="text-[10px] uppercase tracking-[0.12em] text-muted-foreground">Desde · noche demo</p>
+            <p className="text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
+              Desde · noche demo
+            </p>
             <p className="mt-1 text-lg font-semibold">{money(hotel.fromRate)}</p>
           </div>
           <span className="grid size-9 place-items-center rounded-full bg-secondary text-secondary-foreground transition group-hover:bg-primary group-hover:text-primary-foreground">

@@ -10,7 +10,7 @@ export function PublicHeader() {
   const session = useSession();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-black/5 bg-[#faf7f0]/92 shadow-[0_1px_0_rgba(20,40,45,.04)] backdrop-blur-xl">
+    <header className="sticky top-0 z-40 border-b border-black/5 bg-background/95 shadow-[0_1px_0_rgba(20,40,45,.04)] backdrop-blur-xl">
       <a
         href="#contenido"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-2 focus:z-50 focus:rounded-md focus:bg-card focus:px-3 focus:py-2"

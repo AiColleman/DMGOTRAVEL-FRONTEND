@@ -22,18 +22,18 @@ export function FeaturedTours() {
   const q = useQuery({ queryKey: ["tours", {}], queryFn: () => catalogService.listTours() });
 
   return (
-    <section className="bg-background py-24 md:py-28">
+    <section id="experiencias" className="scroll-mt-24 bg-background py-16 md:py-24">
       <div className="container-page">
         <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
           <div className="max-w-3xl">
             <p className="eyebrow">Experiencias seleccionadas</p>
             <h2 className="mt-4 font-display text-4xl leading-[1.02] tracking-[-0.025em] sm:text-5xl md:text-6xl">
-              Rutas que conectan con
-              <span className="block text-muted-foreground">el verdadero Ayacucho.</span>
+              Tu próxima gran historia,
+              <span className="block text-muted-foreground">empieza aquí.</span>
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground md:text-lg">
-              Cultura, historia y naturaleza en itinerarios demo pensados para mostrar cómo se sentirá
-              la experiencia final de DMGOTRAVEL.
+              Elige entre cultura viva, caminos ancestrales y naturaleza. Encuentra los detalles de
+              cada ruta y planea tu viaje a tu ritmo.
             </p>
           </div>
           <Button asChild variant="outline" className="h-12 rounded-full px-6">
@@ -98,8 +98,8 @@ export function Destinations() {
             </h2>
           </div>
           <p className="max-w-md text-sm leading-6 text-white/62 md:text-base">
-            Explora una selección visual de destinos. Los precios y disponibilidades mostrados en el
-            prototipo son demostrativos.
+            De las calles de Huamanga a las aguas de Millpu. Seis destinos, muchas maneras de
+            descubrir lo nuestro.
           </p>
         </div>
 
@@ -171,8 +171,8 @@ const benefits = [
   },
   {
     Icon: ShieldCheck,
-    title: "Pago protegido",
-    text: "La arquitectura está preparada para Culqi sin almacenar datos sensibles de tarjeta.",
+    title: "Decide con tranquilidad",
+    text: "Revisa el precio y los servicios incluidos antes de decidir. Esta versión no realiza cobros.",
   },
   {
     Icon: HeartHandshake,
@@ -192,14 +192,14 @@ export function Benefits() {
             <span className="block text-muted-foreground">Más territorio.</span>
           </h2>
           <p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground">
-            DMGOTRAVEL busca que la tecnología desaparezca cuando no la necesitas y aparezca justo
-            cuando hace falta: para informarte, reservar y darte tranquilidad.
+            Conoce el itinerario, el punto de encuentro y los servicios incluidos. Todo lo que
+            necesitas para elegir tu próxima experiencia, en un solo lugar.
           </p>
 
           <div className="mt-8 inline-flex items-center gap-3 rounded-2xl bg-white/70 px-4 py-3 text-sm shadow-soft">
             <Sparkles className="size-5 text-accent" />
             <span>
-              Diseño del prototipo enfocado en <strong>Ayacucho</strong>.
+              Cultura, naturaleza y tradición de <strong>Ayacucho</strong>.
             </span>
           </div>
         </div>
@@ -239,8 +239,8 @@ export function RecommendedHotels() {
           </div>
           <div className="flex flex-col gap-5 lg:items-end">
             <p className="max-w-xl text-base leading-7 text-muted-foreground">
-              El alojamiento se añade solo si lo necesitas. En esta demo mostramos opciones
-              referenciales inspiradas en la identidad arquitectónica de la región.
+              Patios tranquilos, detalles artesanales y un lugar para bajar el ritmo. Explora
+              alojamientos referenciales para complementar tu recorrido.
             </p>
             <Button asChild variant="outline" className="h-12 rounded-full px-6">
               <Link to="/hotels">
@@ -266,54 +266,46 @@ export function RecommendedHotels() {
   );
 }
 
-const testimonials = [
-  {
-    quote: "Todo estaba claro desde el inicio: horarios, precio referencial y qué incluía la ruta.",
-    name: "Valeria",
-    place: "Experiencia demo · Huamanga",
-    initials: "VD",
-  },
-  {
-    quote: "Poder elegir el tour primero y decidir el alojamiento después hace que la reserva se sienta mucho más simple.",
-    name: "Mateo",
-    place: "Experiencia demo · Millpu",
-    initials: "MD",
-  },
+const questions = [
+  [
+    "¿Puedo elegir solo el tour?",
+    "Sí. El alojamiento es opcional: puedes explorar una experiencia por separado y consultar hoteles si deseas complementar tu viaje.",
+  ],
+  [
+    "¿Qué incluye cada experiencia?",
+    "En el detalle encontrarás el itinerario, punto de encuentro, duración y listas de servicios incluidos y no incluidos. Revisa esta información antes de elegir tu salida.",
+  ],
+  [
+    "¿Los precios y cupos son reales?",
+    "Esta es una versión demostrativa. Los importes, hoteles y salidas son referenciales; no se procesan reservas ni pagos reales. La disponibilidad definitiva se habilitará con el servicio de reservas.",
+  ],
+  [
+    "¿Cómo funcionarán los pagos y las cancelaciones?",
+    "En la versión final, el pago se procesará mediante Culqi y una reserva solo se confirmará después de validar el pago. Podrás cancelar directamente una reserva pendiente; las reservas pagadas estarán sujetas a la política que publique la agencia.",
+  ],
 ];
 
-export function Testimonials() {
+export function TravelQuestions() {
   return (
-    <section className="border-y border-border/70 bg-card py-24 md:py-28">
-      <div className="container-page">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="eyebrow">Experiencia de usuario</p>
-          <h2 className="mt-4 font-display text-4xl leading-[1.05] sm:text-5xl">
-            Diseñado para sentirse claro desde el primer clic.
+    <section className="border-y bg-card py-20 md:py-24">
+      <div className="container-page grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
+        <div>
+          <p className="eyebrow">Antes de partir</p>
+          <h2 className="mt-4 font-display text-4xl leading-tight md:text-5xl">
+            Viaja con ganas.
+            <br />
+            <span className="text-muted-foreground">Y sin dudas.</span>
           </h2>
-          <p className="mt-4 text-sm text-muted-foreground">
-            Testimonios ficticios utilizados únicamente para demostrar la interfaz.
+          <p className="mt-5 max-w-xs text-sm leading-7 text-muted-foreground">
+            Las respuestas que necesitas para empezar a planear tu experiencia.
           </p>
         </div>
-
-        <div className="mx-auto mt-12 grid max-w-5xl gap-5 md:grid-cols-2">
-          {testimonials.map((testimonial) => (
-            <figure
-              key={testimonial.name}
-              className="rounded-[1.4rem] border bg-background p-7 shadow-soft md:p-8"
-            >
-              <blockquote className="font-display text-2xl leading-snug md:text-3xl">
-                “{testimonial.quote}”
-              </blockquote>
-              <figcaption className="mt-7 flex items-center gap-3 border-t pt-5">
-                <span className="grid size-10 place-items-center rounded-full bg-primary text-xs font-semibold text-primary-foreground">
-                  {testimonial.initials}
-                </span>
-                <span>
-                  <span className="block text-sm font-semibold">{testimonial.name}</span>
-                  <span className="block text-xs text-muted-foreground">{testimonial.place}</span>
-                </span>
-              </figcaption>
-            </figure>
+        <div>
+          {questions.map(([question, answer]) => (
+            <details className="faq-row border-b" key={question}>
+              <summary>{question}</summary>
+              <p>{answer}</p>
+            </details>
           ))}
         </div>
       </div>
@@ -340,10 +332,14 @@ export function FinalCta() {
               Ayacucho tiene mucho más que mostrarte.
             </h2>
             <p className="mt-5 max-w-xl text-base leading-7 text-white/72">
-              Explora las experiencias disponibles en la demo y arma una ruta que se adapte a tu tiempo.
+              Elige tu destino, encuentra tu ritmo y empieza a imaginar el próximo recuerdo.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button asChild size="lg" className="h-12 rounded-full bg-white px-6 text-ink hover:bg-white/90">
+              <Button
+                asChild
+                size="lg"
+                className="h-12 rounded-full bg-white px-6 text-ink hover:bg-white/90"
+              >
                 <Link to="/tours">
                   Explorar experiencias <ArrowRight className="size-4" />
                 </Link>

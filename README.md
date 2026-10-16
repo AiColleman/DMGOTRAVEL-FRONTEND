@@ -22,7 +22,9 @@ El contenido demo utiliza destinos de Ayacucho:
 - Vilcashuamán
 - Huanta
 
-Las imágenes son **assets SVG locales del repositorio**, por lo que el frontend no depende de servicios externos para mostrar fotografías/ilustraciones ni de Google Fonts.
+Las fotografías de Ayacucho son **JPEG locales incluidos en el repositorio**. El build y la navegación no descargan imágenes de terceros ni fuentes de Google Fonts. Autorías y licencias: [créditos fotográficos](public/images/ayacucho/CREDITOS.html).
+
+Consulta el [alcance del rediseño y trazabilidad de requisitos](docs-premium-frontend.md).
 
 ## Arquitectura de integración
 
@@ -44,11 +46,12 @@ bun run dev
 ## Validación
 
 ```bash
-bunx tsc --noEmit
-bun run build
+bun run typecheck
+bun run test
+NITRO_PRESET=vercel bun run build
 ```
 
-GitHub Actions ejecuta ambas validaciones automáticamente en cada push a `main`.
+GitHub Actions ejecuta ambas validaciones automáticamente en cada push a `main` y en los pull requests.
 
 ## Estado funcional actual
 

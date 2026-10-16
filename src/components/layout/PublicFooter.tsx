@@ -16,12 +16,18 @@ export function PublicFooter() {
         <div className="space-y-5">
           <Logo inverted />
           <p className="max-w-xs text-sm text-ink-foreground/75">
-            Experiencias inspiradas en Ayacucho, con rutas claras, alojamiento opcional y una experiencia digital pensada para viajar con tranquilidad.
+            Experiencias inspiradas en Ayacucho, con rutas claras, alojamiento opcional y una
+            experiencia digital pensada para viajar con tranquilidad.
           </p>
           <ul className="flex gap-2" aria-label="Redes sociales (demostrativas)">
             {socials.map(({ label, Icon }) => (
               <li key={label}>
-                <span role="img" aria-label={label} title={label} className="grid size-11 place-items-center rounded-md border border-ink-foreground/20 text-ink-foreground/80">
+                <span
+                  role="img"
+                  aria-label={label}
+                  title={label}
+                  className="grid size-11 place-items-center rounded-md border border-ink-foreground/20 text-ink-foreground/80"
+                >
                   <Icon className="size-4" />
                 </span>
               </li>
@@ -33,24 +39,43 @@ export function PublicFooter() {
           <ul className="space-y-1 text-sm">
             {NAV_ITEMS.map((i) => (
               <li key={i.to}>
-                <Link to={i.to} className="inline-flex min-h-10 items-center text-ink-foreground/80 hover:text-ink-foreground">{i.label}</Link>
+                <Link
+                  to={i.to}
+                  className="inline-flex min-h-10 items-center text-ink-foreground/80 hover:text-ink-foreground"
+                >
+                  {i.label}
+                </Link>
               </li>
             ))}
-            <li><Link to="/login" className="inline-flex min-h-10 items-center text-ink-foreground/80 hover:text-ink-foreground">Iniciar sesión</Link></li>
+            <li>
+              <Link
+                to="/login"
+                className="inline-flex min-h-10 items-center text-ink-foreground/80 hover:text-ink-foreground"
+              >
+                Iniciar sesión
+              </Link>
+            </li>
           </ul>
         </nav>
         <div>
           <h2 className="eyebrow mb-4 text-amber">Ayacucho · demo</h2>
           <ul className="space-y-3 text-sm text-ink-foreground/80">
-            <li className="flex gap-2"><MapPin className="mt-0.5 size-4 shrink-0" /> Huamanga, Ayacucho · ubicación referencial</li>
-            <li className="flex gap-2"><Phone className="mt-0.5 size-4 shrink-0" /> +51 900 000 000 (ficticio)</li>
-            <li className="flex gap-2"><Mail className="mt-0.5 size-4 shrink-0" /> hola@example.com</li>
+            <li className="flex gap-2">
+              <MapPin className="mt-0.5 size-4 shrink-0" /> Huamanga, Ayacucho · ubicación
+              referencial
+            </li>
+            <li className="flex gap-2">
+              <Phone className="mt-0.5 size-4 shrink-0" /> +51 900 000 000 (ficticio)
+            </li>
+            <li className="flex gap-2">
+              <Mail className="mt-0.5 size-4 shrink-0" /> hola@example.com
+            </li>
           </ul>
         </div>
         <div>
           <h2 className="eyebrow mb-4 text-amber">Políticas</h2>
           <ul className="space-y-2 text-sm text-ink-foreground/80">
-            <li>Pagos procesados por Culqi; no guardamos datos de tarjeta.</li>
+            <li>Integración con Culqi prevista. Esta demo no procesa pagos.</li>
             <li>El total final lo valida el servidor antes de confirmar.</li>
             <li>Solo las reservas pendientes pueden cancelarse directamente.</li>
           </ul>
@@ -59,7 +84,12 @@ export function PublicFooter() {
       <div className="border-t border-ink-foreground/15">
         <div className="container-page flex flex-col gap-2 py-6 text-xs text-ink-foreground/65 md:flex-row md:justify-between">
           <p>© {new Date().getFullYear()} DMGOTRAVEL. Agencia y operadora turística.</p>
-          <p>Sitio demostrativo: precios, valoraciones, disponibilidad y contactos son ficticios.</p>
+          <a href="/images/ayacucho/CREDITOS.html" className="underline underline-offset-4">
+            Créditos de fotografías
+          </a>
+          <p>
+            Sitio demostrativo: precios, valoraciones, disponibilidad y contactos son ficticios.
+          </p>
         </div>
       </div>
     </footer>

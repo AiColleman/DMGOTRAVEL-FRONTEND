@@ -5,7 +5,7 @@ export function AuthShell({ title, subtitle, children }: { title: string; subtit
   return (
     <div className="grid min-h-[calc(100vh-72px)] lg:grid-cols-2">
       <div className="relative hidden overflow-hidden lg:block">
-        <img src={images.cusco} alt="Calles andinas de Cusco" width={1000} height={1200} className="absolute inset-0 h-full w-full" />
+        <img src={images.andes} alt="Calles andinas de Cusco" width={1000} height={1200} className="absolute inset-0 h-full w-full" />
         <div className="hero-shade absolute inset-0" />
         <div className="absolute inset-x-12 bottom-12 max-w-md space-y-3 text-ink-foreground">
           <p className="eyebrow text-amber">DMGOTRAVEL</p>

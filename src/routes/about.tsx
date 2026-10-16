@@ -18,13 +18,13 @@ export const Route = createFileRoute("/about")({
         <div className="space-y-5">
           <p className="eyebrow">Nosotros</p>
           <h1 className="font-display text-5xl leading-none md:text-6xl">Una agencia y operadora que viaja contigo</h1>
-          <p className="text-lg text-muted-foreground">DMGOTRAVEL nace en los Andes peruanos con una idea simple: que cada viaje se sienta cuidado desde la primera consulta.</p>
+          <p className="text-lg text-muted-foreground">DMGOTRAVEL nace con una mirada puesta en Ayacucho: que cada viaje se sienta cuidado desde la primera consulta y valore el territorio local.</p>
         </div>
         <img src={images.ayacucho} alt="Centro histórico de Huamanga" width={900} height={700} className="aspect-[4/3] w-full rounded-lg" />
       </section>
       <section className="bg-ink py-16 text-ink-foreground">
         <div className="container-page grid gap-10 md:grid-cols-2">
-          <div><p className="eyebrow text-amber">Misión</p><p className="mt-3 font-display text-3xl">Diseñar experiencias auténticas por el Perú, con reservas claras y acompañamiento humano.</p></div>
+          <div><p className="eyebrow text-amber">Misión</p><p className="mt-3 font-display text-3xl">Diseñar experiencias responsables desde Ayacucho, con reservas claras, identidad local y acompañamiento humano.</p></div>
           <div><p className="eyebrow text-amber">Compromiso de servicio</p><p className="mt-3 text-ink-foreground/85">Te respondemos personas reales, validamos cada total en el servidor y solo confirmamos tu reserva cuando el pago es válido.</p></div>
         </div>
       </section>
